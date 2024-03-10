@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Main Home Page'),
     );
   }
 }
@@ -52,6 +52,24 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
+  // State<MyHomePage> createState2() => _LoginPage();
+}
+class LoginPage extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() => _LoginPageState();
+
+}
+class _LoginPageState extends State<LoginPage>{
+  
+  final TextEditingController _username = TextEditingController();
+  
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(16.0),
+    );
+  }
+  
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -112,6 +130,12 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Image.network(
+                "https://codenovation.org/images/flutter-interact-card.png",
+                height:150,
+                width:150
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
