@@ -54,23 +54,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
   // State<MyHomePage> createState2() => _LoginPage();
 }
-class LoginPage extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() => _LoginPageState();
 
-}
-class _LoginPageState extends State<LoginPage>{
-  
-  final TextEditingController _username = TextEditingController();
-  
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(16.0),
-    );
-  }
-  
-}
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -131,11 +115,12 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             Image.network(
-                "https://codenovation.org/images/flutter-interact-card.png",
+                "https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-flutter-logo-icon-png-image_6108134.png",
                 height:150,
-                width:150
+                width:150,
             ),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 20),
+            LoginPage(),
           ],
         ),
       ),
@@ -146,4 +131,60 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+class LoginPage extends StatefulWidget{
+
+  @override
+  State<StatefulWidget> createState() => _LoginPageState();
+
+}
+class _LoginPageState extends State<LoginPage>{
+
+  final TextEditingController _username = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:const EdgeInsets.all(16.0),
+      child:Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          TextField(
+            controller: _username,
+            decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "username"
+            ),
+          ),
+          const SizedBox(height: 20),
+          TextField(
+            controller: _password,
+            decoration:const  InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "password"
+            ),
+          ),
+          const SizedBox(height: 20),
+          FloatingActionButton(
+            onPressed: ()=>{
+              // print('UserName: ${_username.text}'),
+              // print('Password: ${_password.text}'),
+              showDialog(context: context, builder: (context){
+                return AlertDialog(
+                  content: Text('UserName: ${_username.text} , Password: ${_password.text}'),
+                );
+              }),
+            },
+            // child:const Text("Login"),
+            tooltip: 'Show me the value!',
+            child: const Icon(Icons.send),
+          ),
+        ],
+      ),
+    );
+
+
+  }
+
 }
