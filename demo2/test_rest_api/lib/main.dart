@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_rest_api/pages/buyers_page.dart';
+import 'package:test_rest_api/service/route.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -31,8 +34,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Main Home Page'),
-      debugShowCheckedModeBanner: false,
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: "/",
+      routes: {
+        MyRoute.buyersRoute:(context)=>const BuyerPage()
+      },
     );
   }
 }
@@ -53,7 +59,6 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
-// State<MyHomePage> createState2() => _LoginPage();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -114,72 +119,19 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Image.network(
-              "https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-flutter-logo-icon-png-image_6108134.png",
-              height: 150,
-              width: 150,
-            ),
-            // const SizedBox(height: 20),
-            LoginPage(),
+            ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, MyRoute.buyersRoute),
+                child: const Icon(Icons.sell))
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
+
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
-
-class LoginPage extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _username = TextEditingController();
-  final TextEditingController _password = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          TextField(
-            controller: _username,
-            decoration: const InputDecoration(
-                border: OutlineInputBorder(), hintText: "username"),
-          ),
-          const SizedBox(height: 20),
-          TextField(
-            controller: _password,
-            decoration: const InputDecoration(
-                border: OutlineInputBorder(), hintText: "password"),
-          ),
-          const SizedBox(height: 20),
-          FloatingActionButton(
-            onPressed: () => {
-              // print('UserName: ${_username.text}'),
-              // print('Password: ${_password.text}'),
-              showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      content: Text(
-                          'UserName: ${_username.text} , Password: ${_password.text}'),
-                    );
-                  }),
-            },
-            // child:const Text("Login"),
-            tooltip: 'Show me the value!',
-            child: const Icon(Icons.send),
-          ),
-        ],
       ),
+        // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
