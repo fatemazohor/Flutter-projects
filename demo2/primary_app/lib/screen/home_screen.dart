@@ -33,8 +33,7 @@ class Home extends StatelessWidget {
                   {
                     Navigator.push(
                       context, MaterialPageRoute(builder: (context) =>
-                        ManagePeople();
-                    ),
+                        ManagePeople()),
                     ),
                   },
                   child: Icon(Icons.safety_check)
@@ -50,11 +49,6 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: "/",
-      routes: {
-        // MyRoute.ManagePeopeRoute: (context) => const ManagePeople()
-        Route.Ma
-      },
     );
   }
 }
