@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:primary_app/screen/home_screen.dart';
+import 'package:primary_app/screen/manage_people.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,10 +35,12 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       home:Scaffold(
-        appBar: AppBar(
+        // appBar: AppBar(
+        //   title: Text("Main page"),
+        // ),
+        body: Home(),
 
-        ),
-      )
+      ),
     );
   }
 }
