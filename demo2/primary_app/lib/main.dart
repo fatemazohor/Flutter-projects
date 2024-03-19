@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:primary_app/screen/home_screen.dart';
+import 'package:primary_app/screen/layout_page_screen.dart';
 import 'package:primary_app/screen/manage_people.dart';
 
 void main() {
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         // appBar: AppBar(
         //   title: Text("Main page"),
         // ),
-        body: Home(),
+        body: LayoutPage(),
 
       ),
     );

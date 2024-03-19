@@ -23,21 +23,19 @@ class Home extends StatelessWidget {
           child: Column(
             children: <Widget>[
               IconButton(
-                  onPressed: () =>
-                  {
-                    print("~~~~~~~Delete from home.~~~~~~~~"),
-                  },
+                  onPressed: () => {
+                        print("~~~~~~~Delete from home.~~~~~~~~"),
+                      },
                   icon: Icon(Icons.delete)),
               ElevatedButton(
-                  onPressed: () =>
-                  {
-                    Navigator.push(
-                      context, MaterialPageRoute(builder: (context) =>
-                        ManagePeople()),
-                    ),
-                  },
-                  child: Icon(Icons.safety_check)
-              ),
+                  onPressed: () => {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ManagePeople()),
+                        ),
+                      },
+                  child: Icon(Icons.safety_check)),
               // Dismissible(background:Container(color: Colors.blueAccent),
               //     secondaryBackground: Container(color: Colors.amber),
               //     onDismissed: (direction){
