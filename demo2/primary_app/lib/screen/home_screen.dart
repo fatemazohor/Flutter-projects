@@ -2,6 +2,7 @@ import 'dart:js_interop_unsafe';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:primary_app/screen/manage_people.dart';
 
 class Home extends StatelessWidget {
@@ -36,15 +37,12 @@ class Home extends StatelessWidget {
                         ),
                       },
                   child: Icon(Icons.safety_check)),
-              // Dismissible(background:Container(color: Colors.blueAccent),
-              //     secondaryBackground: Container(color: Colors.amber),
-              //     onDismissed: (direction){
-              //   print("you swipe $direction");
-              //     }
-              //     ,key: key, child: Text("h")
-              // ),
             ],
           ),
+        ),
+        drawer: const Drawer(
+          width:120,
+          backgroundColor: Colors.lightBlue,
         ),
       ),
     );

@@ -66,10 +66,7 @@ class LayoutPage extends StatelessWidget {
             ],
           ),
         ),
-        drawer: const Drawer(
-          width: 40,
-          backgroundColor: Colors.lightBlue,
-        ),
+        drawer: Drawer(),
       ),
     );
   }
