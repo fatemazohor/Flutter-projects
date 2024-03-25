@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:primary_app/screen/manage_people.dart';
+import 'package:primary_app/screen/style_page.dart';
+import 'package:primary_app/screen/task.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -33,7 +35,7 @@ class Home extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ManagePeople()),
+                              builder: (context) => TaskPage()),
                         ),
                       },
                   child: Icon(Icons.safety_check)),

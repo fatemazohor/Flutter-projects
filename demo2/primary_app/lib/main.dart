@@ -4,6 +4,8 @@ import 'package:primary_app/screen/home_screen.dart';
 import 'package:primary_app/screen/layout_page_screen.dart';
 import 'package:primary_app/screen/login_page.dart';
 import 'package:primary_app/screen/manage_people.dart';
+import 'package:primary_app/screen/style_page.dart';
+import 'package:primary_app/screen/task.dart';
 import 'package:primary_app/util/route.dart';
 
 void main() {
@@ -31,7 +33,10 @@ class MyApp extends StatelessWidget {
       routes:
       {"/":(context)=>Home(),
       MyRoute.homeRoute:(context)=>Home(),
-      MyRoute.loginRoute:(context)=>LoginPage()},// routes
+      MyRoute.loginRoute:(context)=>LoginPage(),
+      MyRoute.styleRoute:(context)=>Style(),
+      MyRoute.taskRoute:(context)=>TaskPage(),
+      },// routes
     );
   }
 }
