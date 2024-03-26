@@ -15,12 +15,13 @@ class TaskPage extends StatefulWidget {
 }
 
 class _TaskPageState extends State<TaskPage> {
+  final TaskService _service= TaskService();
   late Future<List<Task>> taskFuture;
 
   @override
   void initState() {
     super.initState();
-    taskFuture = TaskService().fetchTask();
+    taskFuture = _service.fetchTask();
   }
   @override
   Widget build(BuildContext context) {
@@ -57,22 +58,26 @@ class _TaskPageState extends State<TaskPage> {
         // debugPrint('tasks: $tasks');
 
         print(tasks);
-        return Container(
-          color: Colors.grey.shade300,
-          margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-          height: 100,
-          width: double.maxFinite,
-          child: Row(
-            children: <Widget>[
-              // Expanded(flex: 1, child: Image.network(post.url!)),
-              // SizedBox(width: 5),
-              Expanded(flex: 3, child: Text(task.name!)),
+        return ListTile(
 
-            ],
-
-          ),
+            title: Text(task.name! ),
         );
+        // return Container(
+        //   color: Colors.grey.shade300,
+        //   margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+        //   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+        //   height: 100,
+        //   width: double.maxFinite,
+        //   child: Row(
+        //     children: <Widget>[
+        //       Expanded(flex: 1, child: Image.network(post.url!)),
+        //       SizedBox(width: 5),
+        //       Expanded(flex: 3, child: Text(task.name!)),
+        //
+        //     ],
+        //
+        //   ),
+        // );
       },
     );
   }

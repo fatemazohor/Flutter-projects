@@ -5,10 +5,10 @@ import 'dart:convert';
 import 'package:primary_app/model/task.dart';
 import 'package:http/http.dart' as http;
 class TaskService {
-
+static const String baseUrl="http://localhost:8098/api/sale/task";
 
   Future<List<Task>> fetchTask() async {
-    String baseUrl = "http://localhost:8098/api/sale/task";
+    // String baseUrl = "http://localhost:8098/api/sale/task";
     final response = await http
         .get(Uri.parse(baseUrl));
 
