@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:primary_app/model/time_action_page.dart';
 import 'package:primary_app/screen/home_screen.dart';
 import 'package:primary_app/screen/layout_page_screen.dart';
 import 'package:primary_app/screen/login_page.dart';
@@ -7,6 +8,7 @@ import 'package:primary_app/screen/manage_people.dart';
 import 'package:primary_app/screen/style_page.dart';
 import 'package:primary_app/screen/task.dart';
 import 'package:primary_app/screen/task_form.dart';
+import 'package:primary_app/screen/time_action_page.dart';
 import 'package:primary_app/util/route.dart';
 
 void main() {
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           fontFamily: GoogleFonts.lato().fontFamily
       ),
-      initialRoute: "/task",
+      initialRoute: "/time_action",
       routes:
       {"/":(context)=>const Home(),
       MyRoute.homeRoute:(context)=>const Home(),
@@ -39,6 +41,7 @@ class MyApp extends StatelessWidget {
       MyRoute.styleRoute:(context)=>const Style(),
       MyRoute.taskRoute:(context)=>const TaskPage(),
       MyRoute.taskFormRoute:(context)=>const TaskForm(),
+      MyRoute.timeActionRoute:(context)=>const TimeActionPage(),
       },// routes
     );
   }
