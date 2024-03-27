@@ -6,6 +6,7 @@ import 'package:primary_app/screen/login_page.dart';
 import 'package:primary_app/screen/manage_people.dart';
 import 'package:primary_app/screen/style_page.dart';
 import 'package:primary_app/screen/task.dart';
+import 'package:primary_app/screen/task_form.dart';
 import 'package:primary_app/util/route.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Primary App",
       themeMode: ThemeMode.light,
       theme: ThemeData(
@@ -29,13 +31,14 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           fontFamily: GoogleFonts.lato().fontFamily
       ),
-      initialRoute: "/login",
+      initialRoute: "/task",
       routes:
-      {"/":(context)=>Home(),
-      MyRoute.homeRoute:(context)=>Home(),
-      MyRoute.loginRoute:(context)=>LoginPage(),
-      MyRoute.styleRoute:(context)=>Style(),
-      MyRoute.taskRoute:(context)=>TaskPage(),
+      {"/":(context)=>const Home(),
+      MyRoute.homeRoute:(context)=>const Home(),
+      MyRoute.loginRoute:(context)=>const LoginPage(),
+      MyRoute.styleRoute:(context)=>const Style(),
+      MyRoute.taskRoute:(context)=>const TaskPage(),
+      MyRoute.taskFormRoute:(context)=>const TaskForm(),
       },// routes
     );
   }
